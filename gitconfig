@@ -1,2 +1,5 @@
 [alias]
 	ai = add --interactive
+[user]
+	name = Brett Nash
+	email = nash@nash.id.au
