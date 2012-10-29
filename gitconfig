@@ -1,5 +1,8 @@
 [alias]
 	ai = add --interactive
+	st = status -sb
 [user]
 	name = Brett Nash
 	email = nash@nash.id.au
+[ui]
+	color = auto
