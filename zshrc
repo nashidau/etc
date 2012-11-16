@@ -1,4 +1,4 @@
 
-export CFLAGS="-Wall -Werror -O2"
+export CFLAGS="-Wall -Werror -O2 -Wextra"
 
 export PROMPT="%~%# "
