@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-@dotfiles = <zshrc vimrc gitconfig>;
+@dotfiles = <zshrc zshenv vimrc gitconfig>;
 
 foreach $file (@dotfiles) {
 	
