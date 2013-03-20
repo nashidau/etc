@@ -2,8 +2,9 @@
 
 @dotfiles = <zshrc zshenv vimrc gitconfig>;
 
+$home = $ENV{'HOME'};
+
 foreach $file (@dotfiles) {
-	
-	print "ln -sf /home/nash/etc/$file /home/nash/.$file\n";
-	system("ln -sf /home/nash/etc/$file /home/nash/.$file");
+	print "ln -sf $home/etc/$file $home/.$file\n";
+	system("ln -sf $home/etc/$file $home/.$file");
 }
