@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-@dotfiles = <zshrc zshenv vimrc gitconfig>;
+@dotfiles = <zshrc zshenv vimrc gvimrc gitconfig>;
 
 $home = $ENV{'HOME'};
 
