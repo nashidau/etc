@@ -6,3 +6,5 @@
 	email = nash@nash.id.au
 [ui]
 	color = auto
+[push]
+	default = simple
