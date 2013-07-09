@@ -8,8 +8,5 @@ set modeline
 set modelines=2
 
 " Highlight whitespace
-" Enter the right-angle-quote by pressing Ctrl-k then >>
-" Enter the middle-dot by pressing Ctrl-k then .M
-:set nolist
-:set listchars=trail:·
-
+set list listchars=trail:·,tab:\ \ 
+	
