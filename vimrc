@@ -9,4 +9,9 @@ set modelines=2
 
 " Highlight whitespace
 set list listchars=trail:·,tab:\ \ 
-	
+
+" Add some indent
+filetype plugin indent on
+
+" Load the modules.
+execute pathogen#infect()	
