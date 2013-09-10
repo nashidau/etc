@@ -32,4 +32,5 @@ while (($module, $src) = each (%vimmodules)) {
 	}
 }
 
+system("mkdir -p ~/.fonts");
 
