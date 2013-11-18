@@ -18,5 +18,5 @@ Future work
 
    - Allow it to merge machine specific changes.
    - Make the vim plugins submodules.
-
+   - Fonts
 
