@@ -9,6 +9,7 @@ foreach $file (@dotfiles) {
 	system("ln -sf $home/etc/$file $home/.$file");
 }
 
+# FIXME: Check curl exists, or wget
 
 # Vim stuff
 system("mkdir -p ~/.vim/autoload");
