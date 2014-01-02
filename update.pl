@@ -1,6 +1,6 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -w
 
-@dotfiles = <zshrc zshenv vimrc gvimrc gitconfig>;
+@dotfiles = <zshrc zshenv vimrc gvimrc gitconfig Xmodmap xinitrc>;
 
 $home = $ENV{'HOME'};
 
@@ -14,7 +14,7 @@ foreach $file (@dotfiles) {
 # Vim stuff
 system("mkdir -p ~/.vim/autoload");
 if (!-x "~/.vim/autoload/pathogen.vim") {
-	system("curl -Sso ~/.vim/autoload/pathogen.vim " +
+	system("curl -Sso ~/.vim/autoload/pathogen.vim " .
     	"https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim");
 }
 
@@ -35,3 +35,7 @@ while (($module, $src) = each (%vimmodules)) {
 
 system("mkdir -p ~/.fonts");
 
+system("curl -Sso ~/.fonts/CosmicSansNeueMono.otf " .
+	"https://raw.github.com/belluzj/cosmic-sans-neue/master/OTF/CosmicSansNeueMono.otf");
+system("curl -Sso ~/.fonts/CosmicSansNeueMonoBold.otf " .
+	"https://raw.github.com/belluzj/cosmic-sans-neue/master/OTF/CosmicSansNeueMonoBold.otf");
