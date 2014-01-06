@@ -15,3 +15,6 @@ filetype plugin indent on
 
 " Load the modules.
 execute pathogen#infect()	
+
+" Visual Bell.  I don't want a beep
+set vb
