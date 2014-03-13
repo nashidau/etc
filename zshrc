@@ -1,5 +1,5 @@
 # FIXME: Should check to see which exists.
-export CC="cgcc"
+export CC="clang-3.4"
 export CFLAGS="-Wall -O2 -Wextra -Wno-unused-parameter -Wno-sign-compare -g3"
 export PROMPT="%~%# "
 
@@ -15,3 +15,4 @@ export PATH="/home/nash/perl5/bin:$PATH";
 
 autoload -U zmv
 alias mmv='noglob zmv -W'
+alias O=xdg-open
