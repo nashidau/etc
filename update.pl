@@ -21,7 +21,7 @@ if (!-x "~/.vim/autoload/pathogen.vim") {
 system("mkdir -p ~/.vim/bundle");
 
 %vimmodules = (
-	numbers => "https://github.com/myusuf3/numbers.vim.git numbers"
+	lldb => "https://github.com/gilligan/vim-lldb.git lldb"
 );
 
 while (($module, $src) = each (%vimmodules)) {
@@ -32,6 +32,8 @@ while (($module, $src) = each (%vimmodules)) {
 		system("cd ~/.vim/bundle ; git clone $src");
 	}
 }
+
+
 
 system("mkdir -p ~/.fonts");
 
