@@ -21,7 +21,8 @@ if (!-x "~/.vim/autoload/pathogen.vim") {
 system("mkdir -p ~/.vim/bundle");
 
 %vimmodules = (
-	lldb => "https://github.com/gilligan/vim-lldb.git lldb"
+	lldb => "https://github.com/gilligan/vim-lldb.git lldb",
+	fugitive => "git://github.com/tpope/vim-fugitive.git"
 );
 
 while (($module, $src) = each (%vimmodules)) {
