@@ -1,5 +1,5 @@
 # FIXME: Should check to see which exists.
-export CC="clang-3.4"
+export CC="clang"
 export CFLAGS="-Wall -O2 -Wextra -Wno-unused-parameter -Wno-sign-compare -g3"
 export PROMPT="%~%# "
 
