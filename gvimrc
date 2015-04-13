@@ -1,6 +1,6 @@
 " Set the colorscheme
 colorscheme koehler
-set guifont=Anonymous\ Pro\ 12
+set guifont=Fantasque\ Sans\ Mono\ 10
 
 set lines=63
-set columns=163
+set columns=203

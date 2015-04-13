@@ -20,3 +20,6 @@ Future work
    - Make the vim plugins submodules.
    - Fonts
 
+
+Todo:
+	CosmiC Sans is now https://github.com/belluzj/fantasque-sans

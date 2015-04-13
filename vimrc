@@ -7,6 +7,9 @@ syntax enable
 set modeline
 set modelines=2
 
+" Highlight my search please
+set hlsearch
+
 " Highlight whitespace
 "set list listchars=trail:·,tab:\ \ 
 

@@ -1,16 +1,25 @@
 [alias]
 	ai = add --interactive
 	st = status -sb
+	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit --color
 [user]
 	name = Brett Nash
 	email = nash@nash.id.au
+[color]
+	diff = always
+	status = always
 [ui]
 	color = auto
 [push]
-	default = simple
+	default = tracking
+[apply]
+	whitespace = strip
 [giggle]
 	main-window-maximized = false
 	main-window-geometry = 1228x938+189+27
 	main-window-view = HistoryView
 	history-view-vpane-position = 487
 	file-view-vpane-position = 554
+[branch]
+	autosetuprebase = always

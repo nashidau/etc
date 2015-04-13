@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-@dotfiles = <zshrc zshenv vimrc gvimrc gitconfig Xmodmap xinitrc>;
+@dotfiles = <zshrc zshenv vimrc nvimrc gvimrc gitconfig Xmodmap xinitrc>;
 
 $home = $ENV{'HOME'};
 
@@ -14,8 +14,15 @@ foreach $file (@dotfiles) {
 # Vim stuff
 system("mkdir -p ~/.vim/autoload");
 if (!-x "~/.vim/autoload/pathogen.vim") {
-	system("curl -Sso ~/.vim/autoload/pathogen.vim " .
+	system("curl -LSso ~/.vim/autoload/pathogen.vim " .
     	"https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim");
+}
+
+# Cscope for vim:
+if (!-x "~/.vim/plugin/cscope_maps.vim") {
+	system("mkdir -p ~/.vim/plugin");
+	system("curl -LSso ~/.vim/plugin/cscope_maps.vim " .
+		"http://cscope.sourceforge.net/cscope_maps.vim");
 }
 
 system("mkdir -p ~/.vim/bundle");
@@ -38,7 +45,7 @@ while (($module, $src) = each (%vimmodules)) {
 
 system("mkdir -p ~/.fonts");
 
-system("curl -Sso ~/.fonts/CosmicSansNeueMono.otf " .
+system("curl -SLso ~/.fonts/CosmicSansNeueMono.otf " .
 	"https://raw.github.com/belluzj/cosmic-sans-neue/master/OTF/CosmicSansNeueMono.otf");
-system("curl -Sso ~/.fonts/CosmicSansNeueMonoBold.otf " .
+system("curl -SLso ~/.fonts/CosmicSansNeueMonoBold.otf " .
 	"https://raw.github.com/belluzj/cosmic-sans-neue/master/OTF/CosmicSansNeueMonoBold.otf");

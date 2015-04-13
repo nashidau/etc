@@ -25,5 +25,8 @@ autoload -U zmv
 alias mmv='noglob zmv -W'
 alias O=xdg-open
 alias Ox="for i in $* ; xdg-open $i"
+alias gvim="nvim -g"
+alias gdiff="nvim -g -d"
+alias view="nvim -r"
 
 export USE_CCACHE=1
