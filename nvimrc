@@ -1,3 +1,7 @@
+
+" I usually use a dark terminal
+:set background=dark
+
 set backspace=indent,eol,start  " more powerful backspacing
 set ruler               " show the cursor position all the time
 
@@ -14,5 +18,3 @@ set ruler               " show the cursor position all the time
 
 syn on
 
-" I usually use a dark terminal
-:set background=dark
