@@ -3,6 +3,7 @@
 	st = status -sb
 	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit --color
+	figg = diff
 [user]
 	name = Brett Nash
 	email = nash@nash.id.au
@@ -13,8 +14,8 @@
 	color = auto
 [push]
 	default = tracking
-[apply]
-	whitespace = strip
+[pull]
+	rebase = true
 [giggle]
 	main-window-maximized = false
 	main-window-geometry = 1228x938+189+27
