@@ -28,9 +28,18 @@ alias Ox="for i in $* ; xdg-open $i"
 alias gvim="nvim -g"
 alias gdiff="nvim -g -d"
 alias view="nvim -r"
+alias E="nvim -c ':rightb :vsp' -c ':below :sp' -c ':term' -c ':wincmd h'"
+
+export EDITOR=nvim
+export VISUAL=nvim
 
 export USE_CCACHE=1
 
 # Urgh... this is a hack, but since I mostly use gnome-terminal it's probably
 # fine.  /me waves to future me who is deleting this.
 export COLORTERM=${COLORTERM:=gnome-terminal}
+
+# Dir colors:
+# `dircolors` prints out `LS_COLORS='...'; export LS_COLORS`, so eval'ing
+# $(dircolors) effectively sets the LS_COLORS environment variable.
+export eval "$(dircolors)"
