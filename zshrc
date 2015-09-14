@@ -33,4 +33,4 @@ export USE_CCACHE=1
 
 # Urgh... this is a hack, but since I mostly use gnome-terminal it's probably
 # fine.  /me waves to future me who is deleting this.
-export COLORTERM=gnome-terminal
+export COLORTERM=${COLORTERM:=gnome-terminal}
