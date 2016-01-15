@@ -1,9 +1,14 @@
-# FIXME: Should check to see which exists.
-export CC="clang"
-export CFLAGS="-Wall -O2 -Wextra -Wno-unused-parameter -Wno-sign-compare -g3"
-export PROMPT="%~%# "
 
-export PATH=/home/nash/bin:$PATH
+# Colors: black red green yellow blue magenta cyan white
+# To set in prompt use: %{ [...] %}  (So the cursor doesn't move)
+# $fg[color]  $reset_color $fg_bold[color]
+
+autoload -U colors && colors
+
+# STY is the screen session name
+export PROMPT="%F{blue}${STY}%f%(1n.:.)%{%(?.%F{green}.%F{red})%}%~%#%f "
+
+export PATH=${HOME}/bin:${HOME}/upstream/jdk1.8.0_40/bin:$PATH
 
 unsetopt nomatch
 
@@ -20,6 +25,9 @@ export PERL_MB_OPT="--install_base "/home/nash/perl5"";
 export PERL_MM_OPT="INSTALL_BASE=/home/nash/perl5";
 export PERL5LIB="/home/nash/perl5/lib/perl5:$PERL5LIB";
 export PATH="/home/nash/perl5/bin:$PATH";
+export PATH="$PATH:${HOME}/work/nx/third-party/gcc-linaro-arm/bin"
+
+export RPMDIR="${HOME}/rpm"
 
 autoload -U zmv
 alias mmv='noglob zmv -W'
@@ -43,3 +51,5 @@ export COLORTERM=${COLORTERM:=gnome-terminal}
 # `dircolors` prints out `LS_COLORS='...'; export LS_COLORS`, so eval'ing
 # $(dircolors) effectively sets the LS_COLORS environment variable.
 export eval "$(dircolors)"
+
+bindkey '^R' history-incremental-search-backward
