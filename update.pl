@@ -10,8 +10,8 @@ foreach $file (@dotfiles) {
 }
 
 # Nvim now uses ~/.config/nvim/init.vim
-mkdir -p ~/.config/nvim/
-ln -s $home/etc/nvimrc  ~/.config/nvim/init.vim
+system("mkdir -p $home/.config/nvim/");
+system("ln -sf $home/etc/nvimrc  ~/.config/nvim/init.vim");
 
 # FIXME: Check curl exists, or wget
 
