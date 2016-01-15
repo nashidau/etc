@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-@dotfiles = <zshrc zshenv vimrc nvimrc gvimrc gitconfig Xmodmap xinitrc>;
+@dotfiles = <zshrc zshenv vimrc gvimrc gitconfig Xmodmap xinitrc>;
 
 $home = $ENV{'HOME'};
 
@@ -8,6 +8,10 @@ foreach $file (@dotfiles) {
 	print "ln -sf $home/etc/$file $home/.$file\n";
 	system("ln -sf $home/etc/$file $home/.$file");
 }
+
+# Nvim now uses ~/.config/nvim/init.vim
+mkdir -p ~/.config/nvim/
+ln -s $home/etc/nvimrc  ~/.config/nvim/init.vim
 
 # FIXME: Check curl exists, or wget
 
