@@ -1,5 +1,6 @@
 [alias]
 	ai = add --interactive
+	ri = rebase --interactive
 	st = status -sb
 	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit --color
@@ -8,7 +9,7 @@
 	name = Brett Nash
 	email = nash@nash.id.au
 [color]
-	diff = always
+	diff = auto
 	status = always
 [ui]
 	color = auto
