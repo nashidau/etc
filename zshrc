@@ -53,3 +53,5 @@ export COLORTERM=${COLORTERM:=gnome-terminal}
 export eval "$(dircolors)"
 
 bindkey '^R' history-incremental-search-backward
+
+PATH=${PATH}:/opt/homebrew/bin
