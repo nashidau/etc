@@ -3,15 +3,19 @@
 @dotfiles = <zshrc zshenv vimrc gvimrc gitconfig Xmodmap xinitrc>;
 
 $home = $ENV{'HOME'};
+$pwd = `pwd`;
+chomp($pwd);
+
+print($pwd, $home);
 
 foreach $file (@dotfiles) {
-	print "ln -sf $home/etc/$file $home/.$file\n";
-	system("ln -sf $home/etc/$file $home/.$file");
+	print "ln -sf $pwd/$file $home/.$file\n";
+	system("ln -sf $pwd/$file $home/.$file");
 }
 
 # Nvim now uses ~/.config/nvim/init.vim
 system("mkdir -p $home/.config/nvim/");
-system("ln -sf $home/etc/nvimrc  ~/.config/nvim/init.vim");
+system("ln -sf $pwd/nvimrc  ~/.config/nvim/init.vim");
 
 # FIXME: Check curl exists, or wget
 
