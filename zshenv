@@ -1,6 +1,6 @@
 
-export LANG=en_AU.utf8
-export LC_ALL=en_AU.utf8
+export LANG=en_AU.UTF-8
+export LC_ALL=en_AU.UTF-8
 
 # dotfiles first:w
 export LC_COLLATE="C"
