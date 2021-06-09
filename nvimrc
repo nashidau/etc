@@ -85,6 +85,10 @@ local on_attach = function(client, bufnr)
 
   --Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+  
+  -- Turn on the two columns for the signs when we have a language server.
+  -- Otherwise it appears when you do an don't want to paste
+  vim.wo.signcolumn = 'yes'
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
