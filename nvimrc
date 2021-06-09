@@ -16,6 +16,9 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'itchyny/lightline.vim'
 
+" Sneak plugin - move round files with sAB where AB is seach term
+Plug 'justinmk/vim-sneak'
+
 call plug#end()
 
 " If lightline is installed; it shows the mode; so we can disable the -- INSERT -- 
