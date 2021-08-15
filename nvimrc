@@ -19,6 +19,9 @@ Plug 'itchyny/lightline.vim'
 " Sneak plugin - move round files with sAB where AB is seach term
 Plug 'justinmk/vim-sneak'
 
+" Put nice little diff lines on changes
+Plug 'mhinz/vim-signify'
+
 call plug#end()
 
 " If lightline is installed; it shows the mode; so we can disable the -- INSERT -- 
@@ -66,6 +69,9 @@ set clipboard=unnamed
 :nnoremap <C-v> "+p
 :inoremap <C-v> <C-r>+
 :vnoremap <C-c> "+y
+
+" For the signifiy plugin, just show a marker, not a count for deleted lines
+let g:signify_sign_show_count = 0
 
 lua << ENDOFLUA
 --
