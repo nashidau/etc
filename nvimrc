@@ -22,6 +22,9 @@ Plug 'justinmk/vim-sneak'
 " Put nice little diff lines on changes
 Plug 'mhinz/vim-signify'
 
+" GLSL shader support
+Plug 'tikhomirov/vim-glsl'
+
 call plug#end()
 
 " If lightline is installed; it shows the mode; so we can disable the -- INSERT -- 
@@ -57,7 +60,7 @@ set ruler               " show the cursor position all the time
 " Highlight 100th coloumn of text
 " FIXME: Should only do on code/md files
 let &colorcolumn=join(range(101,200),",")
-highlight ColorColumn ctermbg=DarkBlue guibg=blue
+highlight ColorColumn ctermbg=8 guibg=blue
 set textwidth=100
 
 syn on
