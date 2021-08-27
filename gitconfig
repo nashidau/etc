@@ -25,3 +25,5 @@
 	file-view-vpane-position = 554
 [branch]
 	autosetuprebase = always
+[init]
+	defaultBranch = main
