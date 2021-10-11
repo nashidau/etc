@@ -43,6 +43,15 @@ let g:lightline = {
 set backspace=indent,eol,start  " more powerful backspacing
 set ruler               " show the cursor position all the time
 
+" * n: normal only
+" * v: visual and select
+" * o: operator-pending
+" * x: visual only
+" * s: select only
+" * i: insert
+" * c: command-line
+" * l: insert, command-line, regexp-search (and others. Collectively called "Lang-Arg" pseudo-mode)
+
 " Map Alt-<hjkl> to be movement keys, even in terminal mode.
 :tnoremap <A-h> <C-\><C-n><C-w>h
 :tnoremap <A-j> <C-\><C-n><C-w>j
@@ -57,14 +66,6 @@ set ruler               " show the cursor position all the time
 :inoremap <A-k> <C-w>k
 :inoremap <A-l> <C-w>l
 
-" Highlight 100th coloumn of text
-" FIXME: Should only do on code/md files
-let &colorcolumn=join(range(101,200),",")
-highlight ColorColumn ctermbg=8 guibg=blue
-set textwidth=100
-
-syn on
-
 " Put things in '*' by default: So p/y copy to/from X selections.
 set clipboard=unnamed
 
@@ -73,8 +74,24 @@ set clipboard=unnamed
 :inoremap <C-v> <C-r>+
 :vnoremap <C-c> "+y
 
+" Highlight 100th coloumn of text
+" FIXME: Should only do on code/md files
+let &colorcolumn=join(range(101,200),",")
+highlight ColorColumn ctermbg=8 guibg=blue
+set textwidth=100
+
+syn on
+
+" Turn on spell check for certain filetypes automatically
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
+autocmd FileType gitcommit setlocal spell spelllang=en_us
+
 " For the signifiy plugin, just show a marker, not a count for deleted lines
 let g:signify_sign_show_count = 0
+
+" Set some context when scrolling; keep at least N lines
+set scrolloff=2
 
 lua << ENDOFLUA
 --
