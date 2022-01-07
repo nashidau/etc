@@ -8,7 +8,7 @@ autoload -U colors && colors
 # STY is the screen session name
 export PROMPT="%F{blue}${STY}%f%(1n.:.)%{%(?.%F{green}.%F{red})%}%~%#%f "
 
-export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:${HOME}/bin:${HOME}/upstream/jdk1.8.0_40/bin:${HOME}/aros/xros/bin:$PATH
+export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:${HOME}/bin:${HOME}/upstream/jdk1.8.0_40/bin:/usr/local/opt/llvm/bin/clangd:${PATH}
 
 unsetopt nomatch
 
@@ -36,6 +36,6 @@ export VISUAL=nvim
 # fine.  /me waves to future me who is deleting this.
 export COLORTERM=${COLORTERM:=gnome-terminal}
 
-bindkey '^R' history-incremental-search-backward
+export PATH=${PATH}:/opt/homebrew/bin:/opt/homebrew/bin/opt/llvm/bin
 
-PATH=${PATH}:/opt/homebrew/bin:~/nvim-osx64/bin/
+alias luamake=/Users/nash/work/upstream/lua-language-server/3rd/luamake/luamake
