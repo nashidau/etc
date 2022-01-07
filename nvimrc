@@ -25,6 +25,8 @@ Plug 'mhinz/vim-signify'
 " GLSL shader support
 Plug 'tikhomirov/vim-glsl'
 
+Plug 'mcchrish/nnn.vim'
+
 call plug#end()
 
 " If lightline is installed; it shows the mode; so we can disable the -- INSERT -- 
@@ -33,8 +35,10 @@ set noshowmode
 
 " And set the scheem to be 'nord'.
 " Using wombar as nord fails for some reason
+" inactive doesn't seem to work :-(
 let g:lightline = {
       \ 'colorscheme': 'wombat',
+      \ 'inactive': { 'left': [['filename', 'modified']] },
       \ }
 
 " I usually use a dark terminal
