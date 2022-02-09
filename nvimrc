@@ -27,6 +27,8 @@ Plug 'tikhomirov/vim-glsl'
 
 Plug 'mcchrish/nnn.vim'
 
+Plug 'akinsho/toggleterm.nvim'
+
 call plug#end()
 
 " If lightline is installed; it shows the mode; so we can disable the -- INSERT -- 
@@ -136,7 +138,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
@@ -189,5 +191,43 @@ vim.g.lightline = { colorscheme = 'wombat';
       active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } };
       component_function = { gitbranch = 'fugitive#head', };
 }
+
+local status_ok, toggleterm = pcall(require, "toggleterm")
+if not status_ok then
+	return
+end
+
+toggleterm.setup({
+	size = 80,
+	open_mapping = [[<c-\>]],
+	hide_numbers = true,
+	shade_filetypes = {},
+	shade_terminals = true,
+	shading_factor = 2,
+	start_in_insert = true,
+	insert_mappings = true,
+	persist_size = true,
+	direction = "float",
+	close_on_exit = true,
+	shell = vim.o.shell,
+	float_opts = {
+		border = "curved", --{relative='win', border='single', width=80, height=100, bufpos={100,10}},
+		winblend = 0,
+		width = 100,
+		highlights = {
+			border = "Normal",
+			background = "Normal",
+		},
+	},
+})
+
+--vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+
+local Terminal = require("toggleterm.terminal").Terminal
+--local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+
+--function _LAZYGIT_TOGGLE()
+--	lazygit:toggle()
+--end
 
 ENDOFLUA
