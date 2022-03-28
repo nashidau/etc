@@ -39,3 +39,8 @@ export COLORTERM=${COLORTERM:=gnome-terminal}
 export PATH=${PATH}:/opt/homebrew/bin:/opt/homebrew/bin/opt/llvm/bin
 
 alias luamake=/Users/nash/work/upstream/lua-language-server/3rd/luamake/luamake
+
+
+# Kitty's image viewer:
+alias icat="kitty +kitten icat"
+
