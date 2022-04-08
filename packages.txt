@@ -1,0 +1,18 @@
+
+
+# termpdf.py
+   brew install mupdf-tools
+   brew install bib-tool
+
+   https://github.com/dsanson/termpdf.py
+
+   git clone https://github.com/dsanson/termpdf.py
+   cd termpdf.py
+   pip install -r requirements.txt
+
+
+# timg
+	
+   brew install timg
+
+

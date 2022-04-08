@@ -8,9 +8,9 @@ call plug#begin()
 Plug 'neovim/nvim-lspconfig'
 Plug 'arcticicestudio/nord-vim'
 " We recommend updating the parsers on update
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " :TSPlaygroundToggle
-Plug 'nvim-treesitter/playground'
+""Plug 'nvim-treesitter/playground'
 
 Plug 'tpope/vim-fugitive'
 
@@ -28,6 +28,9 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'mcchrish/nnn.vim'
 
 Plug 'akinsho/toggleterm.nvim'
+
+Plug 'RishabhRD/popfix'
+Plug 'RishabhRD/nvim-cheat.sh'
 
 call plug#end()
 
@@ -176,6 +179,7 @@ nvim_lsp.sumneko_lua.setup{
 
 
 -- Tree-sitter setup
+--[[
 require'nvim-treesitter.configs'.setup {
   --ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ensure_installed = { "c" },
@@ -185,6 +189,7 @@ require'nvim-treesitter.configs'.setup {
     disable = { "node", "rust" },  -- list of language that will be disabled
   },
 }
+--]]
 
 --Set statusbar
 vim.g.lightline = { colorscheme = 'wombat';

@@ -1,0 +1,10 @@
+
+Fix font support:
+	https://github.com/belluzj/fantasque-sans
+
+
+For remote packages - use git submodules.
+
+Add a script to run the stow stuff on directories.
+
+
