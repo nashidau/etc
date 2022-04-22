@@ -9,9 +9,27 @@ I welcome suggestions/pull-requests for improvements.
 Install
 -------
 
-   ./update.pl
+	git submodule update --init --recursive
+
+	stow <thing>
+
+	stow zsh
+	stow nvim
+	stow git
+	stow kitty
 
 This will create the links in your home directory.
+
+FIXME: how to install font automatically?
+
+Plug
+----
+
+Manually copied the plug.vim to nvim/.local/share/nvim/site/autoload
+
+Should do it automatically at some point.
+
+
 
 Future work
 -----------
@@ -20,6 +38,3 @@ Future work
    - Make the vim plugins submodules.
    - Fonts
 
-
-Todo:
-	CosmiC Sans is now https://github.com/belluzj/fantasque-sans

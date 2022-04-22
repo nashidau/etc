@@ -1,6 +1,9 @@
 [submodule "fantasque-sans"]
-	path = fantasque-sans
+	path = packages/fantasque-sans
 	url = https://github.com/belluzj/fantasque-sans
 [submodule "sparse"]
-	path = sparse
+	path = packages/sparse
 	url = git://git.kernel.org/pub/scm/devel/sparse/sparse.git
+[submodule "vim-plug"]
+	path = packages/vim-plug
+	url = https://github.com/junegunn/vim-plug.git
