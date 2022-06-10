@@ -17,12 +17,6 @@
 	default = tracking
 [pull]
 	rebase = true
-[giggle]
-	main-window-maximized = false
-	main-window-geometry = 1228x938+189+27
-	main-window-view = HistoryView
-	history-view-vpane-position = 487
-	file-view-vpane-position = 554
 [branch]
 	autosetuprebase = always
 [init]
