@@ -44,3 +44,13 @@ alias luamake=/Users/nash/work/upstream/lua-language-server/3rd/luamake/luamake
 # Kitty's image viewer:
 alias icat="kitty +kitten icat"
 
+fix_automounts () {
+	sudo automount -vc
+	sudo odutil reset cache
+	sudo pkill -9 opendirectoryd
+	sudo pkill -9 automountd
+	sudo pkill -9 autofsd
+	kdestroy
+	echo "kinit ${CBL_KRB_AC_USER}@APPLECONNECT.APPLE.COM"
+	kinit ${CBL_KRB_AC_USER}@APPLECONNECT.APPLE.COM
+}
