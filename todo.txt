@@ -8,3 +8,8 @@ For remote packages - use git submodules.
 Add a script to run the stow stuff on directories.
 
 
+defaults write -g NSWindowShouldDragOnGesture -bool true   
+	makes cmd + ctrl + mouse move windows
+
+defaults write com.apple.notes NSAutomaticSpellingCorrectionEnabled -bool false
+	Stops spelling autocorrection from fucking up notes
