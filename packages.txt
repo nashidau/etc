@@ -15,4 +15,8 @@
 	
    brew install timg
 
+# XCPretty
 
+Generates compile commands.
+
+		https://github.com/xcpretty/xcpretty
