@@ -32,6 +32,9 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-cheat.sh'
 
+" Xcode support (should this be ifdefed for linux?)
+Plug 'tami5/xbase'
+
 call plug#end()
 
 " If lightline is installed; it shows the mode; so we can disable the -- INSERT -- 
