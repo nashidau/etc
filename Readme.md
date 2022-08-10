@@ -38,3 +38,10 @@ Future work
    - Make the vim plugins submodules.
    - Fonts
 
+
+Touch ID Sudo
+-------------
+
+add to line after comment in /etc/pam.d/sudo
+
+auth sufficient pam_tid.so
