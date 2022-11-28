@@ -152,11 +152,15 @@ local on_attach = function(client, bufnr)
 
 end
 
+local lsp_flags = {
+  -- This is the default in Nvim 0.7+
+  debounce_text_changes = 150,
+}
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "clangd", "tsserver" }
+local servers = { "clangd", "tsserver", "pyright" }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
+  nvim_lsp[lsp].setup { on_attach = on_attach, flags = lsp_flags }
 end
 nvim_lsp.sumneko_lua.setup{
 	on_attach=on_attach,
