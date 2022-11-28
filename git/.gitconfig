@@ -1,6 +1,7 @@
 [alias]
 	ai = add --interactive
 	ri = rebase --interactive
+	rc = rebase --continue
 	st = status -sb
 	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit --color
