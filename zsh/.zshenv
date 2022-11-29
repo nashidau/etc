@@ -16,3 +16,6 @@ export LIBRARY_PATH=/opt/homebrew/lib
 # Instruction from https://ao.ms/how-to-install-a-ruby-gem-without-root-on-a-mac/
 export GEM_HOME=~/rubygems/gems
 export PATH=${PATH}:${GEM_HOME}/bin
+
+# Go needs it's own path, because of course it does
+export GOPATH=${HOME}/work/go
