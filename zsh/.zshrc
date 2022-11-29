@@ -40,6 +40,9 @@ export PATH=${PATH}:/opt/homebrew/bin:/opt/homebrew/bin/opt/llvm/bin
 
 alias luamake=/Users/nash/work/upstream/lua-language-server/3rd/luamake/luamake
 
+# FIXME: Should be Mac only
+hash -d iCloud=~/Library/Mobile\ Documents/com~apple~CloudDocs/
+
 
 # Kitty's image viewer:
 alias icat="kitty +kitten icat"
