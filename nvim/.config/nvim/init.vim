@@ -35,6 +35,9 @@ Plug 'RishabhRD/nvim-cheat.sh'
 " Xcode support (should this be ifdefed for linux?)
 Plug 'tami5/xbase'
 
+" Duck (or cat)
+Plug 'tamton-aquib/duck.nvim'
+
 " CSV support: This is awesome:
 " 	https://github.com/mechatroner/rainbow_csv
 " 	- :RbSelecte to do searches 
@@ -237,6 +240,10 @@ toggleterm.setup({
 		},
 	},
 })
+
+vim.keymap.set('n', '<leader>dd', function() require("duck").hatch() end, {})
+vim.keymap.set('n', '<leader>dk', function() require("duck").cook() end, {})
+vim.keymap.set('n', '<leader>dc', function() require("duck").hatch("🐈") end, {})
 
 --vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
 
