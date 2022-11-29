@@ -35,6 +35,11 @@ Plug 'RishabhRD/nvim-cheat.sh'
 " Xcode support (should this be ifdefed for linux?)
 Plug 'tami5/xbase'
 
+" CSV support: This is awesome:
+" 	https://github.com/mechatroner/rainbow_csv
+" 	- :RbSelecte to do searches 
+Plug 'mechatroner/rainbow_csv'
+
 call plug#end()
 
 " If lightline is installed; it shows the mode; so we can disable the -- INSERT -- 
