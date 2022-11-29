@@ -1,3 +1,5 @@
+[include]
+	path = .gituser	
 [alias]
 	ai = add --interactive
 	ri = rebase --interactive
@@ -8,9 +10,6 @@
 	figg = diff
 	remotes =for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/remotes
 	heads = for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/heads
-[user]
-	name = Brett Nash
-	email = nash@nash.space
 [color]
 	diff = auto
 	status = always

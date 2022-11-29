@@ -29,19 +29,32 @@ Manually copied the plug.vim to nvim/.local/share/nvim/site/autoload
 
 Should do it automatically at some point.
 
+Git
+---
 
+To make things useful across multiple acounts, .gitconfig includes .gituser.
+
+Add your email and any system specific data to that file.
+
+```
+[user]
+	name = Brett Nash
+	email = nash@nash.space
+```
+
+You can check you got things right by using: `git config --global --includes user.email`
 
 Future work
 -----------
 
-   - Allow it to merge machine specific changes.
    - Make the vim plugins submodules.
    - Fonts
-
 
 Touch ID Sudo
 -------------
 
 add to line after comment in /etc/pam.d/sudo
 
+```
 auth sufficient pam_tid.so
+```
