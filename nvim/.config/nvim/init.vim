@@ -1,4 +1,3 @@
-
 " Plug plugin manager commands
 "   - :PlugStatus to check status of plugins
 "   - :PlugInstall to install them all
@@ -209,6 +208,7 @@ require'nvim-treesitter.configs'.setup {
 --Set statusbar
 vim.g.lightline = { colorscheme = 'wombat';
       active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } };
+      inactive = { left = { {  }, { 'readonly', 'filename', 'modified' } } };
       component_function = { gitbranch = 'fugitive#head', };
 }
 
