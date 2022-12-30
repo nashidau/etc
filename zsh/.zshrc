@@ -37,6 +37,7 @@ export VISUAL=nvim
 export COLORTERM=${COLORTERM:=gnome-terminal}
 
 export PATH=${PATH}:/opt/homebrew/bin:/opt/homebrew/bin/opt/llvm/bin
+export PATH=${PATH}:/Users/nash/Library/Python/3.8/bin
 
 alias luamake=/Users/nash/work/upstream/lua-language-server/3rd/luamake/luamake
 
