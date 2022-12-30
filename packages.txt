@@ -15,6 +15,10 @@
 	
    brew install timg
 
+# Term-image
+
+	pip install term-image
+
 # XCPretty
 
 Generates compile commands.
