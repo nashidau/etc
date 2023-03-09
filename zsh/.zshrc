@@ -28,6 +28,7 @@ alias gvim="nvim -g"
 alias gdiff="nvim -g -d"
 alias view="nvim -r"
 alias E="nvim -c ':rightb :vsp' -c ':below :sp' -c ':term' -c ':wincmd h'"
+alias kssh="kitty +kitten ssh"
 
 export EDITOR=nvim
 export VISUAL=nvim
