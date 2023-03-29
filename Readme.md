@@ -44,10 +44,15 @@ Add your email and any system specific data to that file.
 
 You can check you got things right by using: `git config --global --includes user.email`
 
+Zsh
+---
+
+Zsh also has a .zshrc.local for system/employer specific BS.
+
+
 Future work
 -----------
 
-   - Make the vim plugins submodules.
    - Fonts
 
 Touch ID Sudo
