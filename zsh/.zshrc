@@ -10,7 +10,7 @@ autoload -U colors && colors
 # STY is the screen session name
 export PROMPT="%F{blue}${STY}%f%(1n.:.)%{%(?.%F{green}.%F{red})%}%~%#%f "
 
-export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:${HOME}/bin:${HOME}/upstream/jdk1.8.0_40/bin:/usr/local/opt/llvm/bin/clangd:${PATH}
+export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:${HOME}/etc/bin:${HOME}/bin:/usr/local/opt/llvm/bin/clangd:${PATH}
 
 unsetopt nomatch
 
