@@ -1,8 +1,10 @@
 
+# Do we have a local profile.
+LOCALCONFIG=~/.zshrc.local && test -f ${LOCALCONFIG} && source ${LOCALCONFIG}
+
 # Colors: black red green yellow blue magenta cyan white
 # To set in prompt use: %{ [...] %}  (So the cursor doesn't move)
 # $fg[color]  $reset_color $fg_bold[color]
-
 autoload -U colors && colors
 
 # STY is the screen session name
@@ -49,13 +51,3 @@ hash -d iCloud=~/Library/Mobile\ Documents/com~apple~CloudDocs/
 # Kitty's image viewer:
 alias icat="kitty +kitten icat"
 
-fix_automounts () {
-	sudo automount -vc
-	sudo odutil reset cache
-	sudo pkill -9 opendirectoryd
-	sudo pkill -9 automountd
-	sudo pkill -9 autofsd
-	kdestroy
-	echo "kinit ${CBL_KRB_AC_USER}@APPLECONNECT.APPLE.COM"
-	kinit ${CBL_KRB_AC_USER}@APPLECONNECT.APPLE.COM
-}
