@@ -1,1 +1,4 @@
+settings set target.disable-aslr false
 settings set target.load-script-from-symbol-file true
+settings set target.load-cwd-lldbinit true
+settings set frame-format #${frame.index}: ${frame.pc}{ \x1b\x5b36m${module.file.basename}\x1b\x5b39m \x1b\x5b33m{`${function.name-with-args}${function.pc-offset}}}{ at \x1b\x5b32m${line.file.fullpath}:${line.number}}\x1b\x5b39m\n
