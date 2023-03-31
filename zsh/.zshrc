@@ -51,3 +51,5 @@ hash -d iCloud=~/Library/Mobile\ Documents/com~apple~CloudDocs/
 # Kitty's image viewer:
 alias icat="kitty +kitten icat"
 
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
