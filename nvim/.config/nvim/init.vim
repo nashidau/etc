@@ -45,6 +45,9 @@ Plug 'mechatroner/rainbow_csv'
 " Marks in the side panel
 Plug 'chentoast/marks.nvim'
 
+" Allows regions ot have on syntax (galvinise)
+Plug 'inkarkat/vim-SyntaxRange'
+
 call plug#end()
 
 " If lightline is installed; it shows the mode; so we can disable the -- INSERT -- 
