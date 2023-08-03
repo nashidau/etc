@@ -289,4 +289,10 @@ require'marks'.setup {
 --	lazygit:toggle()
 --end
 
+-- So a new command to use xcodemake
+--vim.api.nvim_create_user_command('CompileCommands', 
+--	'!xcodebuild | xcpretty --report json-compilation-database --output compile_commands.json');
+
+
+
 ENDOFLUA
