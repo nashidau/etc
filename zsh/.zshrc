@@ -24,13 +24,14 @@ compinit
 
 autoload -U zmv
 alias mmv='noglob zmv -W'
+alias view="nvim -r"
+# Kitty's image viewer:
+alias icat="kitty +kitten icat"
+alias kssh="kitty +kitten ssh"
 alias O=xdg-open
 alias Ox="for i in $* ; xdg-open $i"
-alias gvim="nvim -g"
-alias gdiff="nvim -g -d"
-alias view="nvim -r"
-alias E="nvim -c ':rightb :vsp' -c ':below :sp' -c ':term' -c ':wincmd h'"
-alias kssh="kitty +kitten ssh"
+# Another mac one: Generate compile commands with xc pretty
+alias xccc='xcodebuild| xcpretty --report json-compilation-database --output compile_commands.json'
 
 export EDITOR=nvim
 export VISUAL=nvim
@@ -48,8 +49,7 @@ alias luamake=/Users/nash/work/upstream/lua-language-server/3rd/luamake/luamake
 hash -d iCloud=~/Library/Mobile\ Documents/com~apple~CloudDocs/
 
 
-# Kitty's image viewer:
-alias icat="kitty +kitten icat"
+
 
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
