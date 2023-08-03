@@ -18,6 +18,9 @@ Install
 	stow git
 	stow kitty
 
+    gem install xcpretty
+
+    
 This will create the links in your home directory.
 
 FIXME: how to install font automatically?
@@ -49,11 +52,22 @@ Zsh
 
 Zsh also has a .zshrc.local for system/employer specific BS.
 
+Aliases:
+    mmv -> Zsh multiple move 'mmv a*.c a*.h'
+    O -> xdg-open (dumb linux open command)(
+    view -> Nvim readonky
+    kssh -> Kitty ssh
+    xccc -> Xcode make compile commands
+    icat -> kitty view image
+
+Directory aliases:
+    ~iCloud -> Icloud directly
 
 Future work
 -----------
 
    - Fonts
+   - System specific aliases
 
 Touch ID Sudo
 -------------
