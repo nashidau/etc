@@ -10,6 +10,7 @@
 	figg = diff
 	remotes =for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/remotes
 	heads = for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/heads
+	conflicts = diff --name-only --diff-filter=U
 [color]
 	diff = auto
 	status = always
