@@ -47,6 +47,18 @@ Add your email and any system specific data to that file.
 
 You can check you got things right by using: `git config --global --includes user.email`
 
+Aliases:
+  - ai: Add interative
+  - ri: Rebase interacie
+  - rc: Continue a rebase
+  - st: Short stats
+  - lg: Pretty log
+  - tree: tree log
+  - figg: diff transposed one to the left
+  - remotes: Show all remote commands
+  - heads: shall all local heads
+  - conflits: Show all conflicting files from a merge (git add to clear)
+
 Zsh
 ---
 
@@ -62,6 +74,16 @@ Aliases:
 
 Directory aliases:
     ~iCloud -> Icloud directly
+
+Fonts
+-----
+
+Fantesetque Mono
+ 
+#You only need to do this once for cask-fonts
+    brew tap homebrew/cask-fonts
+
+    brew install --cask font-fantasque-sans-mono
 
 Future work
 -----------
