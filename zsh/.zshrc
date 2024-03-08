@@ -49,7 +49,10 @@ alias luamake=/Users/nash/work/upstream/lua-language-server/3rd/luamake/luamake
 hash -d iCloud=~/Library/Mobile\ Documents/com~apple~CloudDocs/
 
 
-
+# So in nvim ZSH loves to go to vim mode for me.  Which makes
+# sense in the abstract.  But not to my fingers.  Lets make
+# it go to emacs mode.
+bindkey -e
 
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
