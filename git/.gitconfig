@@ -11,6 +11,7 @@
 	remotes =for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/remotes
 	heads = for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/heads
 	conflicts = diff --name-only --diff-filter=U
+	signed = !ac-sign verify-history
 [color]
 	diff = auto
 	status = always
@@ -40,3 +41,9 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[gpg "x509"]
+	program = /usr/local/bin/ac-sign
+[commit]
+	gpgsign = true
+[gpg]
+	format = x509
