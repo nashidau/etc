@@ -20,7 +20,10 @@ Install
 
     gem install xcpretty
 
-    
+    brew install neovim 
+    treesitter through brew
+   
+
 This will create the links in your home directory.
 
 FIXME: how to install font automatically?
@@ -99,3 +102,8 @@ add to line after comment in /etc/pam.d/sudo
 ```
 auth sufficient pam_tid.so
 ```
+
+TreeSitter
+----------
+
+Treesitter parsers can be installed using :TSInstall $language in nvim
