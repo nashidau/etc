@@ -64,16 +64,6 @@ vim.call('plug#end')
 -- at the bottom of the screen
 --set noshowmode
 
--- And set the scheem to be 'nord'.
--- Using wombar as nord fails for some reason
--- inactive doesn't seem to work :-(
---let g:lightline = {
---      \ 'colorscheme': 'wombat',
- --     \ 'inactive': { 'left': [['filename', 'modified']] },
-  --    \ }
-
--- I usually use a dark terminal
-
 vim.cmd.colorscheme "catppuccin-mocha"
 
 --set backspace=indent,eol,start  " more powerful backspacing
@@ -105,7 +95,7 @@ vim.keymap.set("i", "<A-l>", "<C-w>l", { noremap = true, desc = "Move Cursor bet
 
 
 -- Put things in '*' by default: So p/y copy to/from X selections.
---set clipboard=unnamed
+vim.cmd[[set clipboard=unnamedplus]]
 
 -- Ctrl-C/Ctrl-V yank/paste
 --:nnoremap <C-v> "+p
