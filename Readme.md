@@ -20,9 +20,14 @@ Install
 
     gem install xcpretty
 
-    brew install neovim 
-    treesitter through brew
-   
+    brew install neovim lua-language-server \
+            bash-language-server \
+            cmake-language-server \
+            haskell-language-server \
+            sql-language-server     \
+            typescript-language-server  \
+            yaml-language-server
+
 
 This will create the links in your home directory.
 
@@ -45,7 +50,7 @@ Add your email and any system specific data to that file.
 ```
 [user]
 	name = Brett Nash
-	email = nash@nash.space
+	email = brett@nash.space
 ```
 
 You can check you got things right by using: `git config --global --includes user.email`
