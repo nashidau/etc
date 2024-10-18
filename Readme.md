@@ -26,7 +26,9 @@ Install
             haskell-language-server \
             sql-language-server     \
             typescript-language-server  \
-            yaml-language-server
+            yaml-language-server \
+            talloc ghc lua pkg-config check jq
+
 
 
 This will create the links in your home directory.
