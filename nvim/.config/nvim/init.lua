@@ -165,7 +165,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "clangd", "tsserver", "pyright",
+local servers = { "clangd", "ts_ls", "pyright",
 	sourcekit = {
 		root_dir = lspconfig.util.root_pattern(".git", "Package.swift", "compile_commands.json")
 	}
