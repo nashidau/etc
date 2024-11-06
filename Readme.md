@@ -42,6 +42,11 @@ Manually copied the plug.vim to nvim/.local/share/nvim/site/autoload
 
 Should do it automatically at some point.
 
+Hear
+----
+
+https://sveinbjorn.org/hear
+
 Git
 ---
 
