@@ -6,16 +6,18 @@
 local vim = vim
 local Plug = vim.fn['plug#']
 
+---
+--- Plugin Start
 vim.call('plug#begin');
 
-Plug('neovim/nvim-lspconfig')
+-- The :TSUpdate and the like doesn't seem to wor
+Plug('nvim-treesitter/nvim-treesitter', {["do"] = ':TSUpdate', ensure_installed = { "cpp" } })
+
 Plug('arcticicestudio/nord-vim')
 -- We recommend updating the parsers on update
 --Plug('nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'})
 -- :TSPlaygroundToggle
 --"Plug('nvim-treesitter/playground')
-
-Plug('tpope/vim-fugitive')
 
 Plug('itchyny/lightline.vim')
 
@@ -52,19 +54,23 @@ Plug('chentoast/marks.nvim')
 -- Allows regions ot have on syntax (galvinise)
 Plug('inkarkat/vim-SyntaxRange')
 
-Plug('nvim-treesitter/nvim-treesitter')
-	--, {['do'] = function() vim.fn[':TSUpdate'] end})
 
-Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
+Plug('https://github.com/lewis6991/gitsigns.nvim.git')
+
+-- Cool themes
+-- Plug 'oxfist/night-owl.nvim'
+Plug 'catppuccin/nvim'
 
 --Plug 'jerrymarion/xcodebuild.vim'
 vim.call('plug#end')
+-- Plugin end
+
+
+vim.cmd.colorscheme("catppuccin")
 
 -- If lightline is installed; it shows the mode; so we can disable the -- INSERT -- 
 -- at the bottom of the screen
 --set noshowmode
-
-vim.cmd.colorscheme "catppuccin-mocha"
 
 --set backspace=indent,eol,start  " more powerful backspacing
 --set ruler               " show the cursor position all the time
@@ -116,17 +122,6 @@ vim.cmd[[set clipboard=unnamedplus]]
 -- Set some context when scrolling; keep at least N lines
 --set scrolloff=2
 
---
--- Stolen from https://rishabhrd.github.io/jekyll/update/2020/09/19/lspconfig_config.html
---
-
-local lsp_flags = {
-}
-
-require'lspconfig'.clangd.setup{}
-
-local lspconfig = require('lspconfig')
-
 -- Use an on_attach function to only map the following keys 
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -163,42 +158,48 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', "<space>t", '<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>', opts)
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { "clangd", "ts_ls", "pyright",
-	sourcekit = {
-		root_dir = lspconfig.util.root_pattern(".git", "Package.swift", "compile_commands.json")
-	}
 
-}
-require'lspconfig'.sourcekit.setup{}
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup { on_attach = on_attach, flags = lsp_flags }
-end
-lspconfig.lua_ls.setup{
-	on_attach=on_attach,
+-- FIXME ts_ls and swift
+
+vim.lsp.config.luals = {
+	cmd = { 'lua-language-server' },
+	filetypes = { 'lua' },
+	-- Sets the "root directory" to the parent directory of the file in the
+	-- current buffer that contains either a ".luarc.json" or a
+	-- ".luarc.jsonc" file. Files that share a root directory will reuse
+	-- the connection to the same LSP server.
+	root_markers = { '.luarc.json', '.luarc.jsonc' },
+
+	-- Specific settings to send to the server. The schema for this is
+	-- defined by the server. For example the schema for lua-language-server
+	-- can be found here https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json
 	settings = {
 		Lua = {
-			runtime = { version = "LuaJIT", path = vim.split(package.path, ';'), },
-			completion = { keywordSnippet = "Disable", },
-			diagnostics = { enable = true, globals = {
-				"vim", "describe", "it", "before_each", "after_each" },
-			},
-			workspace = {
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-				}
+			runtime = {
+				version = 'LuaJIT',
 			}
 		}
 	}
 }
+
+vim.lsp.config.clangd = {
+	cmd = { 'clangd', '--background-index' },
+	root_markers = { 'compile_commands.json' },
+	filetypes = { 'c', 'cpp' },
+}
+
+vim.lsp.enable({'clangd', 'luals'});
+
+vim.diagnostic.config({
+	virtual_lines = {
+		current_line = true
+	}
+});
+
 -- To see logs try:
 --      :lua print(vim.inspect(vim.lsp.get_log_path()))
 --		-> ~/.local/state/nvim/lsp.log
 --		-> ~/.cache/nvim/lsp.log
-
-require'lspconfig'.lua_ls.setup{}
 
 --Set statusbar
 vim.g.lightline = { colorscheme = 'wombat';
@@ -274,6 +275,54 @@ require'marks'.setup {
   -- default virt_text is "".
 }
 
+require('gitsigns').setup{
+  on_attach = function(bufnr)
+    local gitsigns = require('gitsigns')
+
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    -- Navigation
+    map('n', ']c', function()
+      if vim.wo.diff then
+        vim.cmd.normal({']c', bang = true})
+      else
+        gitsigns.nav_hunk('next')
+      end
+    end)
+
+    map('n', '[c', function()
+      if vim.wo.diff then
+        vim.cmd.normal({'[c', bang = true})
+      else
+        gitsigns.nav_hunk('prev')
+      end
+    end)
+
+    -- Actions
+    map('n', '<leader>hs', gitsigns.stage_hunk)
+    map('n', '<leader>hr', gitsigns.reset_hunk)
+    map('v', '<leader>hs', function() gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+    map('v', '<leader>hr', function() gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+    map('n', '<leader>hS', gitsigns.stage_buffer)
+    map('n', '<leader>hu', gitsigns.undo_stage_hunk)
+    map('n', '<leader>hR', gitsigns.reset_buffer)
+    map('n', '<leader>hp', gitsigns.preview_hunk)
+    map('n', '<leader>hb', function() gitsigns.blame_line{full=true} end)
+    map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
+    map('n', '<leader>hd', gitsigns.diffthis)
+    map('n', '<leader>hD', function() gitsigns.diffthis('~') end)
+    map('n', '<leader>td', gitsigns.toggle_deleted)
+
+    -- Text object
+    map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+  end
+}
+
+
 --function _LAZYGIT_TOGGLE()
 --	lazygit:toggle()
 --end
@@ -295,4 +344,5 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
 
