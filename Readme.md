@@ -45,6 +45,7 @@ Install
             talloc ghc lua pkg-config check jq \
             wtfis
 
+ln -s /System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc ~/bin/jsc
 Adding support for XC
             difi \
 https://xcfile.dev/getting-started/#installation
@@ -65,6 +66,7 @@ brew install neovim lua-language-server \
             cmake-language-server \
             haskell-language-server \
             typescript-language-server  \
+		mpv vnu
             yaml-language-server
 ```
 
@@ -133,8 +135,6 @@ git submodule update --init --recursive
 ### fonts
 
 Fantesetque Mono
-
-
 
 ```sh
 brew install font-fantasque-sans-mono
