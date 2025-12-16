@@ -13,9 +13,9 @@ Install
 
 	stow <thing>
 
-	stow zsh
-	stow nvim
-	stow git
+	stow -t ~ zsh
+	stow -t ~ nvim
+	stow -t ~ git 
 	stow kitty
 
     gem install xcpretty
