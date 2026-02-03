@@ -27,9 +27,38 @@ Install
             sql-language-server     \
             typescript-language-server  \
             yaml-language-server \
-            talloc ghc lua pkg-config check jq
+            talloc ghc lua pkg-config check jq \
+            wtfis
 
+Adding support for XC
+            difi \
+https://xcfile.dev/getting-started/#installation
 
+## Tasks
+
+### All
+
+requires: xc, difi
+
+### xc
+
+```sh
+brew tap joerdav/xc
+brew install xc
+```
+### difi
+
+```sh
+brew tap oug-t/difi
+brew install difi
+```
+### update
+
+```sh
+git submodule update --init --recursive
+```
+
+## Not Tasks yet
 
 This will create the links in your home directory.
 

@@ -61,6 +61,9 @@ Plug('https://github.com/lewis6991/gitsigns.nvim.git')
 -- Plug 'oxfist/night-owl.nvim'
 Plug 'catppuccin/nvim'
 
+-- Diff viewer/editor
+Plug 'oug-t/difi.nvim'
+
 --Plug 'jerrymarion/xcodebuild.vim'
 vim.call('plug#end')
 -- Plugin end

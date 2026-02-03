@@ -33,8 +33,8 @@ alias Ox="for i in $* ; xdg-open $i"
 # Another mac one: Generate compile commands with xc pretty
 alias xccc='xcodebuild| xcpretty --report json-compilation-database --output compile_commands.json'
 
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=`which nvim`
+export VISUAL=`which nvim`
 
 # Urgh... this is a hack, but since I mostly use gnome-terminal it's probably
 # fine.  /me waves to future me who is deleting this.
