@@ -10,9 +10,6 @@ local Plug = vim.fn['plug#']
 --- Plugin Start
 vim.call('plug#begin');
 
--- The :TSUpdate and the like doesn't seem to wor
-Plug('nvim-treesitter/nvim-treesitter', {["do"] = ':TSUpdate', ensure_installed = { "cpp" } })
-
 Plug('arcticicestudio/nord-vim')
 -- We recommend updating the parsers on update
 --Plug('nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'})
@@ -333,19 +330,5 @@ require('gitsigns').setup{
 -- So a new command to use xcodemake
 --vim.api.nvim_create_user_command('CompileCommands', 
 --	'!xcodebuild | xcpretty --report json-compilation-database --output compile_commands.json');
-
--- THis doesn't search the install path for some reason
--- require('treesitter')
-
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-   enable = true,
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
-}
 
 

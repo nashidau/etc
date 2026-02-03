@@ -1,10 +1,26 @@
-Nash's Config Files
-===================
+# Nash's Config Files
 
 This is a set of my config files.  There is nothing deep here, and I try to
 keep my configuration changes small.
 
 I welcome suggestions/pull-requests for improvements.
+
+## Step 1: Install Brew
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+## Step 2: Install XC
+
+(see below)
+
+## Step 3: Use XC to get the list of targets to update and install
+
+xc ...
+
+
+
 
 Install
 -------
@@ -20,13 +36,6 @@ Install
 
     gem install xcpretty
 
-    brew install neovim lua-language-server \
-            bash-language-server \
-            cmake-language-server \
-            haskell-language-server \
-            sql-language-server     \
-            typescript-language-server  \
-            yaml-language-server \
             talloc ghc lua pkg-config check jq \
             wtfis
 
@@ -38,7 +47,64 @@ https://xcfile.dev/getting-started/#installation
 
 ### All
 
-requires: xc, difi
+requires: xc, difi, neovim, wtfis, dev, jq, fonts
+
+### neovim
+
+Installs neovim and the common language servers I care about:
+
+```sh
+brew install neovim lua-language-server \
+            bash-language-server \
+            cmake-language-server \
+            haskell-language-server \
+            typescript-language-server  \
+            yaml-language-server
+```
+
+### dev
+
+This is a bit of a garbage target: Just random stuff together.
+
+requires: talloc, lua, pkg-config, check
+
+### jq
+
+```sh
+brew install jq
+```
+
+### talloc
+
+```sh
+brew install talloc
+```
+
+### lua
+
+```sh
+brew install lua
+```
+
+### pkg-config
+
+```sh
+brew install pkg-config
+```
+
+### check
+
+```sh
+brew install check
+```
+
+### wtfis
+
+WTF is is a tool to lookup network resources.
+
+```sh
+brew install wtfis
+```
 
 ### xc
 
@@ -56,6 +122,16 @@ brew install difi
 
 ```sh
 git submodule update --init --recursive
+```
+
+### fonts
+
+Fantesetque Mono
+
+
+
+```sh
+brew install font-fantasque-sans-mono
 ```
 
 ## Not Tasks yet
@@ -119,15 +195,6 @@ Aliases:
 Directory aliases:
     ~iCloud -> Icloud directly
 
-Fonts
------
-
-Fantesetque Mono
- 
-#You only need to do this once for cask-fonts
-    brew tap homebrew/cask-fonts
-
-    brew install --cask font-fantasque-sans-mono
 
 Future work
 -----------
