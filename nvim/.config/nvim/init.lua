@@ -160,7 +160,6 @@ end
 
 
 -- FIXME ts_ls and swift
-
 vim.lsp.config.luals = {
 	cmd = { 'lua-language-server' },
 	filetypes = { 'lua' },
@@ -332,3 +331,4 @@ require('gitsigns').setup{
 --	'!xcodebuild | xcpretty --report json-compilation-database --output compile_commands.json');
 
 
+--set guifont=Fantasque\ Sans\ Mono:h14
