@@ -54,7 +54,7 @@ https://xcfile.dev/getting-started/#installation
 
 ### All
 
-requires: xc, difi, neovim, wtfis, dev, jq, fonts
+requires: xc, difi, neovim, wtfis, dev, jq, fonts, mpv, vnu
 
 ### neovim
 
@@ -112,6 +112,22 @@ WTF is is a tool to lookup network resources.
 
 ```sh
 brew install wtfis
+```
+
+### mpv
+
+The video player
+
+```sh
+brew install mpv
+```
+
+### vnu
+
+HTML/CSS Verify
+
+```sh
+brew install vnu
 ```
 
 ### xc
