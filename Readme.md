@@ -19,6 +19,12 @@ I welcome suggestions/pull-requests for improvements.
 
 xc ...
 
+## Airpod Sanity:
+
+If the wrong mic is always in use; try this:
+
+https://github.com/Gaulomatic/AirPodsSanity?tab=readme-ov-file
+
 
 
 
