@@ -43,7 +43,7 @@ Plug('tamton-aquib/duck.nvim')
 -- CSV support: This is awesome:
 -- 	https://github.com/mechatroner/rainbow_csv
 -- 	- :RbSelecte to do searches 
-Plug('mechatroner/rainbow_csv')
+--Plug('mechatroner/rainbow_csv')
 
 -- Marks in the side panel
 Plug('chentoast/marks.nvim')
@@ -60,6 +60,8 @@ Plug 'catppuccin/nvim'
 
 -- Diff viewer/editor
 Plug 'oug-t/difi.nvim'
+
+Plug 'neovim/nvim-lspconfig'
 
 --Plug 'jerrymarion/xcodebuild.vim'
 vim.call('plug#end')
@@ -187,7 +189,19 @@ vim.lsp.config.clangd = {
 	filetypes = { 'c', 'cpp' },
 }
 
-vim.lsp.enable({'clangd', 'luals'});
+vim.lsp.enable({'clangd', 'luals', 'harper_ls'});
+
+vim.lsp.config('harper_ls', {
+   settings = {
+     ["harper-ls"] = {
+       userDictPath = "~/etc/harper-dict.txt",
+       filetypes = { 'markdown' },
+       linters = {
+	  NoFrenchSpaces = false,
+	}
+     }
+   },
+ })
 
 vim.diagnostic.config({
 	virtual_lines = {
