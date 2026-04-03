@@ -1,73 +1,77 @@
 
--- Plug plugin manager commands
---   - :PlugStatus to check status of plugins
---   - :PlugInstall to install them all
---   https://github.com/junegunn/vim-plug
 local vim = vim
-local Plug = vim.fn['plug#']
 
 ---
 --- Plugin Start
-vim.call('plug#begin');
+vim.api.nvim_create_autocmd('PackChanged', { callback = function(ev)
+  local name, kind = ev.data.spec.name, ev.data.kind
+  if name == 'nvim-treesitter' and kind == 'update' then
+    if not ev.data.active then vim.cmd.packadd('nvim-treesitter') end
+    vim.cmd('TSUpdate')
+  end
+end })
 
-Plug('arcticicestudio/nord-vim')
--- We recommend updating the parsers on update
---Plug('nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'})
--- :TSPlaygroundToggle
---"Plug('nvim-treesitter/playground')
+vim.pack.add({
+  'https://github.com/nvim-mini/mini.nvim',
+  'https://github.com/neovim/nvim-lspconfig',
+  'https://github.com/nvim-treesitter/nvim-treesitter',
+  'https://github.com/itchyny/lightline.vim',
+  -- Sneak plugin - move round files with sAB where AB is seach term
+  'https://github.com/justinmk/vim-sneak',
 
-Plug('itchyny/lightline.vim')
+  -- Put nice little diff lines on changes
+  'https://github.com/mhinz/vim-signify',
 
--- Sneak plugin - move round files with sAB where AB is seach term
-Plug('justinmk/vim-sneak')
+  'https://github.com/mcchrish/nnn.vim',
 
--- Put nice little diff lines on changes
-Plug('mhinz/vim-signify')
+  -- ^T to pop up terminal.  Amazing
+  'https://github.com/akinsho/toggleterm.nvim',
 
--- GLSL shader support
-Plug('tikhomirov/vim-glsl')
-
-Plug('mcchrish/nnn.vim')
-
-Plug('akinsho/toggleterm.nvim')
-
-Plug('RishabhRD/popfix')
-Plug('RishabhRD/nvim-cheat.sh')
+  -- What are these?
+  'https://github.com/RishabhRD/popfix',
+  'https://github.com/RishabhRD/nvim-cheat.sh',
 
 -- Xcode support (should this be ifdefed for linux?)
-Plug('tami5/xbase')
+  'https://github.com/tami5/xbase',
 
--- Duck (or cat)
-Plug('tamton-aquib/duck.nvim')
+  -- Duck (or cat)
+  'https://github.com/tamton-aquib/duck.nvim',
 
--- CSV support: This is awesome:
--- 	https://github.com/mechatroner/rainbow_csv
--- 	- :RbSelecte to do searches 
---Plug('mechatroner/rainbow_csv')
+  -- CSV support: This is awesome:
+   -- 	- :RbSelecte to do searches 
+  'https://github.com/mechatroner/rainbow_csv',
 
--- Marks in the side panel
-Plug('chentoast/marks.nvim')
+  -- Marks in the side panel
+  'https://github.com/chentoast/marks.nvim',
 
--- Allows regions ot have on syntax (galvinise)
-Plug('inkarkat/vim-SyntaxRange')
+  -- Allows regions ot have on syntax (galvinise)
+  'https://github.com/inkarkat/vim-SyntaxRange',
 
-
-Plug('https://github.com/lewis6991/gitsigns.nvim.git')
-
--- Cool themes
--- Plug 'oxfist/night-owl.nvim'
-Plug 'catppuccin/nvim'
+  'https://github.com/lewis6991/gitsigns.nvim.git',
 
 -- Diff viewer/editor
-Plug 'oug-t/difi.nvim'
+  'https://github.com/oug-t/difi.nvim',
 
-Plug 'neovim/nvim-lspconfig'
+  'https://github.com/neovim/nvim-lspconfig',
 
---Plug 'jerrymarion/xcodebuild.vim'
-vim.call('plug#end')
--- Plugin end
+  'https://github.com/wojciech-kulik/xcodebuild.nvim',
+
+  -- Dependances for Nexus
+  'https://github.com/MunifTanjim/nui.nvim',
+  'https://github.com/nvim-lua/plenary.nvim',
+  'https://github.com/folke/trouble.nvim',
+  'https://github.com/nvim-telescope/telescope.nvim',
+  -- Nexus
+  --'https://github.pie.apple.com/AI-for-Devs-Community/nexus.nvim.git'
 
 
+})
+
+require('mini.basics').setup()
+require('mini.surround').setup()
+vim.lsp.enable({ 'lua_ls' })
+
+-- Set the default color scheme
 vim.cmd.colorscheme("catppuccin")
 
 -- If lightline is installed; it shows the mode; so we can disable the -- INSERT -- 
@@ -336,6 +340,28 @@ require('gitsigns').setup{
 }
 
 
+--if require('nexus') then
+--	require('nexus').setup({
+--	    provider = { name = "genai" },
+--	})
+-- end
+
+
+require('xcodebuild').setup({
+      -- Auto-configures from your project
+      show_build_progress_bar = true,
+      progress_bar_position = "corner",
+      logs = {
+        auto_open_on_success_tests = false,
+        auto_open_on_failed_tests = true,
+        auto_open_on_success_build = false,
+        auto_open_on_failed_build = true,
+        auto_focus = true,
+        auto_scroll = true,
+        only_summary = false,
+      },
+    })
+
 --function _LAZYGIT_TOGGLE()
 --	lazygit:toggle()
 --end
@@ -346,3 +372,5 @@ require('gitsigns').setup{
 
 
 --set guifont=Fantasque\ Sans\ Mono:h14
+
+-- vim: set sw=2 sts=2 : --
