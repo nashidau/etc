@@ -199,7 +199,7 @@ vim.lsp.config('harper_ls', {
    settings = {
      ["harper-ls"] = {
        userDictPath = "~/etc/harper-dict.txt",
-       filetypes = { 'markdown' },
+       filetypes = { 'markdown', 'lua' },
        linters = {
 	  NoFrenchSpaces = false,
 	}

@@ -36,10 +36,6 @@ alias xccc='xcodebuild| xcpretty --report json-compilation-database --output com
 export EDITOR=`which nvim`
 export VISUAL=`which nvim`
 
-# Urgh... this is a hack, but since I mostly use gnome-terminal it's probably
-# fine.  /me waves to future me who is deleting this.
-export COLORTERM=${COLORTERM:=gnome-terminal}
-
 export PATH=${PATH}:/opt/homebrew/bin:/opt/homebrew/bin/opt/llvm/bin
 export PATH=${PATH}:/Users/nash/Library/Python/3.8/bin
 
@@ -47,7 +43,8 @@ alias luamake=/Users/nash/work/upstream/lua-language-server/3rd/luamake/luamake
 
 # FIXME: Should be Mac only
 hash -d iCloud=~/Library/Mobile\ Documents/com~apple~CloudDocs/
-
+hash -d Arcane=/Users/nash/work/rmu/roll20/rmu-compendium/books/arcane
+hash -d RMURoll20=/Users/nash/work/rmu/roll20/
 
 # So in nvim ZSH loves to go to vim mode for me.  Which makes
 # sense in the abstract.  But not to my fingers.  Lets make
