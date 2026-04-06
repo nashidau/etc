@@ -11,6 +11,20 @@ vim.api.nvim_create_autocmd('PackChanged', { callback = function(ev)
   end
 end })
 
+--
+-- pack.add takes a list of packages.
+-- Each can be a string: git repo
+--   an object { src = repo, version = 'x' }
+--   an object { src = version , name = 'branchname' }
+--  object can also have 'data to pass in
+--
+-- To do an update
+-- :lua vim.pack.update()
+--
+-- If I delete something I should do vim.pack.del()  to clean up at some point
+--
+-- :checkhealth vim.pack to check state
+
 vim.pack.add({
   'https://github.com/nvim-mini/mini.nvim',
   'https://github.com/neovim/nvim-lspconfig',
