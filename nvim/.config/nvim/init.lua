@@ -28,7 +28,10 @@ end })
 vim.pack.add({
   'https://github.com/nvim-mini/mini.nvim',
   'https://github.com/neovim/nvim-lspconfig',
-  'https://github.com/nvim-treesitter/nvim-treesitter',
+  {
+    src = 'https://github.com/nvim-treesitter/nvim-treesitter',
+    version = 'main'
+  },
   'https://github.com/itchyny/lightline.vim',
   -- Sneak plugin - move round files with sAB where AB is seach term
   'https://github.com/justinmk/vim-sneak',
@@ -218,7 +221,13 @@ vim.lsp.config.clangd = {
 	filetypes = { 'c', 'cpp' },
 }
 
-vim.lsp.enable({'clangd', 'luals', 'harper_ls'});
+vim.lsp.config.sourcekit = {
+  cmd = { "/usr/bin/sourcekit-lsp" },
+  filetypes = { "swift", "objc", "objcpp" },
+  root_marks = { "Package.swift", ".git" },
+}
+
+vim.lsp.enable({'clangd', 'luals', 'harper_ls', 'sourcekit'});
 
 vim.lsp.config('harper_ls', {
    settings = {
