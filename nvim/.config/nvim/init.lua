@@ -38,8 +38,7 @@ vim.pack.add({
   'https://github.com/tamton-aquib/duck.nvim',
 
   -- CSV support: This is awesome:
-   -- 	- :RbSelecte to do searches 
-  --'https://github.com/mechatroner/rainbow_csv',
+   -- 	- :RbSelecte to do searches 'https://github.com/mechatroner/rainbow_csv',
 
   -- Marks in the side panel
   'https://github.com/chentoast/marks.nvim',
@@ -85,6 +84,9 @@ vim.lsp.enable({ 'lua_ls' })
 
 -- Set the default color scheme
 vim.cmd.colorscheme("catppuccin")
+
+-- 3 lines above or below cursor all the time
+vim.o.scrolloff = 3
 
 -- If lightline is installed; it shows the mode; so we can disable the -- INSERT -- 
 -- at the bottom of the screen
@@ -136,9 +138,6 @@ vim.cmd[[set clipboard=unnamedplus]]
 
 -- For the signifiy plugin, just show a marker, not a count for deleted lines
 --let g:signify_sign_show_count = 0
-
--- Set some context when scrolling; keep at least N lines
---set scrolloff=2
 
 -- Use an on_attach function to only map the following keys 
 -- after the language server attaches to the current buffer
