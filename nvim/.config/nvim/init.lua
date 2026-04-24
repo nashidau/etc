@@ -39,7 +39,7 @@ vim.pack.add({
 
   -- CSV support: This is awesome:
    -- 	- :RbSelecte to do searches 
-  'https://github.com/mechatroner/rainbow_csv',
+  --'https://github.com/mechatroner/rainbow_csv',
 
   -- Marks in the side panel
   'https://github.com/chentoast/marks.nvim',
@@ -64,6 +64,18 @@ vim.pack.add({
   -- Nexus
   --'https://github.pie.apple.com/AI-for-Devs-Community/nexus.nvim.git'
 
+  -- Mythnc GME RPG Emulator
+  -- :MythicTables <table>	Prints 2 random elements with index (e.g., Locations -> 15 Abandoned / 42 Dangerous)
+  -- :MythicChaos	Shows current Chaos Factorv
+  -- :MythicChaos +	Increases Chaos Factor by 1
+  -- :MythicChaos -	Decreases Chaos Factor by 1
+  -- :MythicChaos <n>	Sets Chaos Factor to n (1-9)
+  -- :MythicFateCheck [odds]	2d10 roll vs odds (default: 50/50)
+  -- :MythicFateChart [odds]	1d100 percentile alternative system
+  -- :MythicSceneTest	Tests if scene is Expected, Altered, or Interrupted
+  -- :MythicEventFocus	Generates a Random Event Focus
+  -- :MythicSceneAdjustment	Generates a Scene Adjustment
+  'https://github.com/Django0033/mythic.nvim',
 
 })
 
@@ -336,6 +348,7 @@ require('gitsigns').setup{
 
     -- Text object
     map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+
   end
 }
 
