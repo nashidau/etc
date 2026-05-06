@@ -54,7 +54,7 @@ https://xcfile.dev/getting-started/#installation
 
 ### All
 
-requires: xc, difi, neovim, wtfis, dev, jq, fonts, mpv, vnu
+requires: xc, difi, neovim, wtfis, dev, jq, fonts, mpv, vnu, webm
 
 ### neovim
 
@@ -64,9 +64,9 @@ Installs neovim and the common language servers I care about:
 brew install neovim lua-language-server \
             bash-language-server \
             cmake-language-server \
-            haskell-language-server \
+            haskell-language-server ghc \
             typescript-language-server  \
-		mpv vnu
+            vnu \
             yaml-language-server
 ```
 
@@ -87,6 +87,18 @@ brew install jq
 ```sh
 brew install talloc
 ```
+
+### webm
+
+IINA is a video player for WebM (and others).  And general video player
+
+THe quicklook player is to enable finger quick view
+
+```sh
+brew install iina
+echo Now install: https://github.com/Oil3/Webm-QuickLook-Plug-In
+```
+
 
 ### lua
 
