@@ -56,6 +56,19 @@ https://xcfile.dev/getting-started/#installation
 
 requires: xc, difi, neovim, wtfis, dev, jq, fonts, mpv, vnu, webm
 
+### stow
+
+Stow so I can set the symlinks
+
+```
+brew install stow
+stow -t ~ zsh
+stow -t ~ nvim
+stow -t ~ git
+stow -t ~ kitty
+```
+
+
 ### neovim
 
 Installs neovim and the common language servers I care about:
