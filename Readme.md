@@ -54,7 +54,7 @@ https://xcfile.dev/getting-started/#installation
 
 ### All
 
-requires: xc, difi, neovim, wtfis, dev, jq, fonts, mpv, vnu, webm
+requires: xc, stow, difi, neovim, wtfis, dev, jq, fonts, mpv, vnu, webm
 
 ### stow
 
