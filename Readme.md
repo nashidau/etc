@@ -25,9 +25,6 @@ If the wrong mic is always in use; try this:
 
 https://github.com/Gaulomatic/AirPodsSanity?tab=readme-ov-file
 
-
-
-
 Install
 -------
 
@@ -39,6 +36,7 @@ Install
 	stow -t ~ nvim
 	stow -t ~ git 
 	stow kitty
+	stow ghostty
 
     gem install xcpretty
 
@@ -54,7 +52,7 @@ https://xcfile.dev/getting-started/#installation
 
 ### All
 
-requires: xc, stow, difi, neovim, wtfis, dev, jq, fonts, mpv, vnu, webm
+requires: xc, stow, difi, neovim, wtfis, dev, jq, fonts, mpv, vnu, webm, typst
 
 ### stow
 
@@ -66,6 +64,7 @@ stow -t ~ zsh
 stow -t ~ nvim
 stow -t ~ git
 stow -t ~ kitty
+stow -t ~ ghostty
 ```
 
 
@@ -180,6 +179,15 @@ Fantesetque Mono
 ```sh
 brew install font-fantasque-sans-mono
 ```
+
+### typst
+
+The document formatting tool
+
+```sh
+brew install typst
+```
+
 
 ## Not Tasks yet
 
