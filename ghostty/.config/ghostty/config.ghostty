@@ -1,0 +1,13 @@
+###
+# Brett's Config here:
+###
+
+# Allow hjkl to go straight through to zsh
+keybind = super+h=unbind
+keybind = super+j=unbind
+keybind = super+k=unbind
+keybind = super+l=unbind
+
+macos-option-as-alt = true
+
+clipboard-paste-protection = false
