@@ -37,7 +37,7 @@ vim.pack.add({
   'https://github.com/justinmk/vim-sneak',
 
   -- Put nice little diff lines on changes
-  'https://github.com/mhinz/vim-signify',
+ -- 'https://github.com/mhinz/vim-signify',
 
   'https://github.com/mcchrish/nnn.vim',
 
@@ -95,6 +95,11 @@ vim.pack.add({
 
   -- Haunt - show annotations on code lines; stored in git?
   'https://github.com/TheNoeTrevino/haunt.nvim',
+
+  -- Render Markdown plugin: Icons then the plugin.
+  -- Also requires treesistter 
+   'https://github.com/nvim-tree/nvim-web-devicons',
+   'https://github.com/MeanderingProgrammer/render-markdown.nvim',
 })
 
 require('mini.basics').setup()
