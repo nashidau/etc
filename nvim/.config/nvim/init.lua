@@ -234,7 +234,16 @@ vim.lsp.config.sourcekit = {
   root_marks = { "Package.swift", ".git" },
 }
 
-vim.lsp.enable({'clangd', 'luals', 'harper_ls', 'sourcekit'});
+vim.lsp.config.tinymist = {
+    cmd = { "tinymist" },
+    filetypes = { "typst" },
+    settings = {
+--      typstExtraAgs = { "--features=html,bundle" },
+--      exportTarget = "bundle"
+    },
+}
+
+vim.lsp.enable({'clangd', 'luals', 'harper_ls', 'sourcekit', 'tinymist'});
 
 vim.lsp.config('harper_ls', {
    settings = {
