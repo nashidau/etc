@@ -185,7 +185,7 @@ brew install font-fantasque-sans-mono
 The document formatting tool
 
 ```sh
-brew install typst
+brew install typst tinymist
 ```
 
 
